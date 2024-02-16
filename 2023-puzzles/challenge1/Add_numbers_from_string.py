@@ -1,5 +1,7 @@
+with open('puzzle.json', 'r') as f:
+    string = f.read()
+
 #using iteration throught characters
-string = input("gimme ur string :\n")
 s = 0
 f = 0
 for c in string :
@@ -11,7 +13,7 @@ for c in string :
 f += s
 print ("Resut :\n",f)
 #using iteration throught index 
-string = input("gimme ur string :\n")
+
 s = 0
 f = 0
 for i in range(len(string)):
@@ -24,7 +26,6 @@ f+=s
 print("Resut :\n", f)
 #using regex
 import re 
-string = input("gimme ur string :\n")
 numbers =[int(C) for C in re.findall(r'\d+', string)]
 f  = sum(numbers)
 print ("Resut :\n",f)
