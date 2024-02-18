@@ -1,5 +1,7 @@
-with open('puzzle.json', 'r') as f:
-    string = f.read()
+import json
+with open('./puzzle.json', 'r') as f:
+  string = json.load(f)
+  f.close() 
 
 #using iteration throught characters
 s = 0
