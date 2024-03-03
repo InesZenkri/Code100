@@ -1,6 +1,6 @@
 import json 
 
-with open('catdata.json','r') as f :
+with open('./catdata.json','r') as f :
   data = json.load(f)
 names = set()
 maxw = 0
@@ -16,4 +16,6 @@ for i in data:
   else:
     form[i["filename"][i["filename"].find('.')+1:]] +=1
 res = {"uniquenames": len(names),"widest" : maxw,"tallest":maxh,"formats":form}
-print(res)
+json_data = json.dumps(res, indent=4)
+with open('./res.json', "w") as json_file:
+    json_file.write(json_data)
